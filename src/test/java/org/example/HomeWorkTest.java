@@ -19,8 +19,6 @@ class HomeWorkTest {
         runTest("case.%s");
     }
 
-
-
     private void runTest(String pattern) {
         execute(pattern);
         assertRun(pattern);
@@ -37,7 +35,7 @@ class HomeWorkTest {
     private void execute(String pattern) {
         try (
                 InputStream in = new FileInputStream("frog/" + String.format(pattern, "in"));
-                OutputStream answer = new FileOutputStream("target/" + String.format(pattern, "answer"), false);
+                OutputStream answer = new FileOutputStream("target/" + String.format(pattern, "answer"), false)
         ) {
             HomeWork hw = new HomeWork();
             hw.frogSteps(in, answer);
